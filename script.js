@@ -58,33 +58,38 @@ function hacerOperacion() {
     imprimirError('No has completado los espacios requeridos para completat la operacion.')
   }
   else {
-    function sumar() {
-      let num1 = parseInt(input1.value);
-      let num2 = parseInt(input2.value);
-      let resultadoSuma;
-      resultadoSuma = num1 + num2;
-      imprimirResultado(resultadoSuma)
-    }
-    function restar() {
-      let num1 = parseInt(input1.value);
-      let num2 = parseInt(input2.value);
-      let resultadoResta;
-      resultadoResta = num1 - num2;
-      imprimirResultado(resultadoResta)
-    }
-    function multiplicar() {
-      let num1 = parseInt(input1.value);
-      let num2 = parseInt(input2.value);
-      let resultadoMultiplicar;
-      resultadoMultiplicar = num1 * num2;
-      imprimirResultado(resultadoMultiplicar)
-    }
-    function dividir() {
-      let num1 = parseInt(input1.value);
-      let num2 = parseInt(input2.value);
-      let resultadoDividir;
-      resultadoDividir = num1 / num2;
-      imprimirResultado(resultadoDividir)
+    let seleccionar = document.querySelector('select');
+
+    seleccionar.addEventListener('click', realizaOp);
+
+    function realizaOp() {
+      let eleccion = seleccionar.value;
+
+      if (eleccion === 'sumar'){
+        let num1 = parseInt(input1.value);
+        let num2 = parseInt(input2.value);
+        let resultadoSuma;
+        resultadoSuma = num1 + num2;
+        imprimirResultado(resultadoSuma)
+      } else if (eleccion === 'restar'){
+        let num1 = parseInt(input1.value);
+        let num2 = parseInt(input2.value);
+        let resultadoResta;
+        resultadoResta = num1 - num2;
+        imprimirResultado(resultadoResta)
+      } else if (eleccion === 'multiplicar'){
+        let num1 = parseInt(input1.value);
+        let num2 = parseInt(input2.value);
+        let resultadoMultiplicar;
+        resultadoMultiplicar = num1 * num2;
+        imprimirResultado(resultadoMultiplicar)
+      } else if (eleccion === 'dividir') {
+        let num1 = parseInt(input1.value);
+        let num2 = parseInt(input2.value);
+        let resultadoDividir;
+        resultadoDividir = num1 / num2;
+        imprimirResultado(resultadoDividir)
+      }
     }
   }
 }
